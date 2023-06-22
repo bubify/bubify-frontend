@@ -1,0 +1,30 @@
+{
+  "authError": {
+    "common": "Unauthorized action, this has been logged"
+  },
+  "API": {
+    "ACHIEVEMENT_NOT_FOUND": "The action mentioned a non-existing achievement",
+    "CURRENT_USER_NOT_IN_SUBMITTERS": "You cannot perform this action on a request that you are not a part of",
+    "DEMONSTRATION_NOT_FOUND": "The action mentioned a non-existing demonstration",
+    "ENROLMENT_NOT_FOUND": "The action is accessing a user's enrolment(s) and found none -- maybe a teacher was accidentally handled as a student?",
+    "HELPREQUEST_EXPIRED": "An expired help request cannot be claimed or marked done",
+    "HELPREQUEST_NOT_FOUND": "Trying to claim/mark-as-done/cancel a non-existing help request",
+    "HELPREQUEST_NOT_PICKED_UP": "A help request that is not picked up cannot be marked done",
+    "INVALID_CURRENT_USER": " Internal error: the current user's identifier did not match any record on file",
+    "STUDENTS_MAY_NOT_CLAIM_DEMONSTRATION": "A student may not claim a demonstration",
+    "USER_IN_MULTIPLE_HELP_REQUEST": "One of the selected users is already on the list",
+    "USER_NOT_CURRENTLY_ENROLLED": "At least one student in the current action is not enrolled in the current course instance",
+    "USER_IN_MULTIPLE_DEMO_REQUEST": "One of the selected users is already active in another demonstration",
+    "USER_NOT_FOUND": "The action mentioned a non-existing user",
+    "JWT_MISSING_FROM_REQUEST_HEADERS": "The JWT token is malformed or missing",
+    "A_DEMONSTRATION_REQUEST_MUST_CONTAIN_AT_LEAST_ONE_ACHIEVEMENT": "A request to demonstrate must contain at least one achievement",
+    "DEMONSTRATION_ALREADY_GRADED": "The demonstration has already been graded",
+    "DEMONSTRATION_DONE_DOES_NOT_MATCH_REQUEST": "Result contains students or achievements that were not in the request being graded",
+    "HELPREQUEST_CANNOT_MARK_BY_STUDENT_NOT_IN_HELPREQUEST": "Deprecated after role-based security is merged",
+    "STUDENTS_MAY_NOT_CLAIM_OR_UNCLAIM_DEMONSTRATION": "Deprecated after role-based security is merged",
+    "STUDENT_NOT_ALLOWED_TO_PERFORM_THAT_ACTION": "Deprecated after role-based security is merged",
+    "DEMONSTRATION_CONTAINED_NON_DEMONSTRATABLE_ACHIEVEMENT": "Internal error: the demonstration contains an achievement that cannot be passed through demonstration.",
+    "JWT_TOKEN_EXPIRED": "The JWT token has expired, please log in again",
+    "GRADING_REQUIRES_VERIFIED_PROFILE_PIC": "All students need a verified profile picture"
+  }
+}

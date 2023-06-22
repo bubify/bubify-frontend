@@ -1,0 +1,75 @@
+{
+  "name": "bubify",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/dayjs": "^1.3.13",
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@material-ui/pickers": "^3.3.10",
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.5.0",
+    "@stomp/stompjs": "^6.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@types/node": "^12.20.16",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "axios": "^0.21.1",
+    "chart.js": "2.9.4",
+    "dayjs": "^1.10.6",
+    "i18next": "^20.3.2",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "i18next-http-backend": "^1.2.6",
+    "jsonwebtoken": "^8.5.1",
+    "notifyjs": "^3.0.0",
+    "react": "^17.0.2",
+    "react-avatar-editor": "^12.0.0",
+    "react-chartjs-2": "2.11.1",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.11.1",
+    "react-images-upload": "git://github.com/JonasNorlinder/react-images-upload.git",
+    "react-linkify": "^1.0.0-alpha",
+    "react-responsive": "^8.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "cross-env BROWSER=none CHOKIDAR_USEPOLLING=true HOST=0.0.0.0 react-scripts start",
+    "build": "react-scripts build",
+    "build-dev": "cross-env REACT_APP_MODE=development react-scripts build",
+    "lint": "eslint --ext .ts --ext .tsx src/**",
+    "lint-fix": "eslint --fix --ext .ts --ext .tsx src/**"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.4",
+    "@types/notifyjs": "^3.0.3",
+    "@types/react-avatar-editor": "^10.3.6",
+    "@types/react-linkify": "^1.0.1",
+    "@types/react-responsive": "^8.0.3",
+    "@types/react-router-dom": "^5.1.8",
+    "@types/sockjs-client": "^1.5.1",
+    "cross-env": "^7.0.3"
+  }
+}

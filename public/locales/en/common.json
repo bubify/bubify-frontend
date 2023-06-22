@@ -1,0 +1,164 @@
+{
+  "AskNotifyPermissions": {
+    "title": "Allow browser notifications?",
+    "message": "Let us send you notifications so you don't miss important updates, e.g. when a teacher has claimed your ticket. Don't worry we will not spam you."
+  },
+  "LoginNavigation": {
+    "login": "Login via Uppsala University CAS",
+    "logout": "Logout from CAS"
+  },
+  "Menu": {
+    "dashboard": "Dashboard",
+    "requestHelp": "Request Help",
+    "demonstrateGoal": "Demonstrate Goal",
+    "myCodeSpace": "My Codespace",
+    "myGithub": "My GitHub",
+    "coursePage": "Course Page",
+    "logout": "Logout",
+    "statistics": "Statistics",
+    "achievementExplorer": "Achievement Explorer",
+    "revokeProfilePic": "Revoke Profile Picture",
+    "editUser": "Edit User",
+    "students": "Students",
+    "grader": "Grade Management",
+    "addUser": "Add User",
+    "userManagement": "User Management",
+    "settings": "Settings"
+  },
+  "AddUser": {
+    "createUser": "Create user"
+  },
+  "Grader": {
+    "selectAchievements": "Select achievements",
+    "selectUsers": "Select users",
+    "sendRequest": "Mark achievements as passed",
+    "requestSent": "Student(s) achievements marked as passed"
+  },
+  "AchievementsRequest": {
+    "selectAchievements": "Select achievements"
+  },
+  "ClaimedBy": {
+    "claimed": "Claimed by:"
+  },
+  "AchievementListTable": {
+    "title": "My Achievements",
+    "achievement": "Achievement",
+    "shortDescription": "Short Description",
+    "gradeLevel": "Grade Level",
+    "showPushed": "Show pushbacks",
+    "showUnlocked": "Show unlocked",
+    "showRemaining": "Show remaining",
+    "alwaysShowUnlocked": "Always show passed achievements",
+    "unlock": "Marked as passed"
+  },
+  "TableCommon": {
+    "requesters": "Requester(s)",
+    "time": "Waiting time",
+    "claimed": "Claimed",
+    "claim": "Claim",
+    "action": "Action",
+    "claimedBy": "Claimed by",
+    "claimThis": "Claim this request",
+    "unclaimThis": "Unclaim this request",
+    "videoCall": "Zoom",
+    "markAsDone": "Mark as done",
+    "done": "Done",
+    "grade": "Grade",
+    "selectedAchievements": "Achievements",
+    "comment": "Comment",
+    "location": "Location"
+  },
+  "DemonstrateStudent": {
+    "requestSlot": "Request Slot For Demonstration"
+  },
+  "HelpTableTeacher": {
+    "toastClaimed": "Help request claimed",
+    "toastMarkAsDone": "Help request marked as done"
+  },
+  "DemonstrateTableTeacher": {
+    "toastClaimed": "Demonstration request claimed"
+  },
+  "HelpStudent": {
+    "requestHelp": "Request Help"
+  },
+  "SelectGoalsToDemonstrate": {
+    "sendRequest": "Send request",
+    "password": "Zoom password (optional)",
+    "warningTooManyGoals": "Warning: you have selected too many achievements for your demonstration",
+    "requestSent": "Request to demonstrate is added to the demonstration list",
+    "warningTooManyUsers": "Warning: more than two students listed in the demonstration"
+  },
+  "SelectUsersHelpList": {
+    "sendRequest": "Send request",
+    "message": "Comment (optional)",
+    "password": "Zoom password (optional)",
+    "toastHelpRequestAdded": "Help request is added to the help list"
+  },
+  "SimpleClaimTable": {
+    "toastRequestRemoved": "Your help request is now removed",
+    "myRequests": "My requests",
+    "cancelRequest": "Cancel my request",
+    "waitTime": "Waiting time:"
+  },
+  "MyDemonstrateGoalTableStudent": {
+    "myRequests": "My requests",
+    "cancelMyRequestButton": "Cancel my request",
+    "toastRemovedRequest": "Your demonstration request is now removed",
+    "selectedAchievements": "Selected achievements:",
+    "waitTime": "Waiting time:"
+  },
+  "ConfirmationAlert": {
+    "cancelRequest": "Cancel request(s)",
+    "noteUndone": "Note that this can't be undone",
+    "abort": "Abort",
+    "cancelRequestButton": "Cancel request(s)"
+  },
+  "UsersList": {
+    "select": "Select requesters"
+  },
+  "GradeStudent": {
+    "pass": "Pass",
+    "fail": "Not pass",
+    "failPushback": "Push back",
+    "testify": "Tick this box only after you have double-checked, and if you feel good about what you've entered",
+    "confirm": "Confirm grading"
+  },
+  "DrawerMenu": {
+    "applicationTitle": "Bubify"
+  },
+  "StatisticsCard": {
+    "saveButton": "Save",
+    "myTargetGrade": "Show requirements for grade",
+    "averageAchievementsWeek": "Actual passed achievements per week",
+    "targetAchievementsWeek": "Achievements per week to pass in order to reach target grade",
+    "achievementThisWeek": "Achievements unlocked this week",
+    "achievementsRemaining": "Achievements to go",
+    "remainingWeeks": "Weeks to target date"
+  },
+  "BurnDownChart": {
+    "title": "Burndown Chart",
+    "yAxis": "Achievements Remaining",
+    "xAxis": "Elapsed Time in Weeks",
+    "idealLabel": "Ideal",
+    "myLabel": "You"
+  },
+  "QualityOfServiceCard": {
+    "helpRequestsPending": "Pending help requests",
+    "helpRequestsPickupTime": "Average help request pickup time (minutes)",
+    "helpRequestsRoundtripTime": "Help request round trip time (minutes)",
+    "demonstrationsPending": "Pending demonstration requests",
+    "demonstrationsPickupTime": "Average demonstration request pickup time (minutes)",
+    "demonstrationsRoundtripTime": "Demonstration round trip time (minutes)"
+  },
+  "AchievementExplorer": {
+    "selectAchievements": "Select achievement (maximum 1)"
+  },
+  "AchievementsExplorerTable": {
+    "unlocked": "Unlocked",
+    "remaining": "Remaining",
+    "struggling": "Struggling"
+  },
+  "Cloud9": {
+    "showInstructions": "Show installation instructions to run once in the beginning of the course"
+  }
+}
