@@ -1,7 +1,7 @@
 import { Client, StompSubscription } from "@stomp/stompjs";
 import { AxiosError, AxiosResponse } from "axios";
 import * as React from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import SockJS from "sockjs-client";
 import {
@@ -44,9 +44,9 @@ interface ContextValue {
 }
 export type EContextValue = ContextValue;
 
-interface Props {
-  children: React.ReactNode;
-}
+// interface Props {
+//   children: React.ReactNode;
+// }
 
 function storeAskPermissions(askPermission: boolean) {
   if (localStorage) {
@@ -177,7 +177,7 @@ const UserContext = React.createContext<ContextValue>({
 });
 
 const UserProvider = withTranslation(["error"])(
-  class UserProviderClass extends React.PureComponent<Props & WithTranslation> {
+  class UserProviderClass extends React.PureComponent<any> {
     public state = {
       token: null,
       user: null,
@@ -200,7 +200,7 @@ const UserProvider = withTranslation(["error"])(
       subscriptions: StompSubscription[];
     };
 
-    constructor(props: Props & WithTranslation) {
+    constructor(props: any) {
       super(props);
       const token = getToken();
       if (token) {
@@ -526,4 +526,5 @@ const UserProvider = withTranslation(["error"])(
 const UserConsumer = UserContext.Consumer;
 
 export default UserContext;
-export { UserProvider, UserConsumer };
+export { UserConsumer, UserProvider };
+
