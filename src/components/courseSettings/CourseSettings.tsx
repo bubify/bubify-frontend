@@ -3,14 +3,13 @@ import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, InputLab
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import React from "react";
-import { WithTranslation, withTranslation } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { CourseResponse } from "../../models/CourseResponse";
 import axios from "../../utils/axios";
 import { Loader } from "../loader/Loader";
 import { SafeButton } from "../safeButton/SafeButton";
 import { withUser } from "../userContext";
-import { EContextValue } from "../userContext/UserContext";
 
 interface Props { }
 
@@ -19,7 +18,7 @@ interface State {
 }
 
 class CourseSettings extends React.Component<
-  Props & WithTranslation & EContextValue,
+  any,
   State
 > {
   constructor(props: any) {
@@ -296,4 +295,4 @@ class CourseSettings extends React.Component<
   }
 }
 
-export default withUser()(withTranslation()(CourseSettings));
+export default withTranslation()(withUser()(CourseSettings));

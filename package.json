@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "*",
     "@date-io/dayjs": "^1.3.13",
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
@@ -29,16 +30,16 @@
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.1",
-    "react-images-upload": "git://github.com/JonasNorlinder/react-images-upload.git",
+    "react-images-upload": "https://github.com/JonasNorlinder/react-images-upload/archive/refs/tags/dev.tar.gz",
     "react-linkify": "^1.0.0-alpha",
     "react-responsive": "^8.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.0",
     "react-toastify": "^7.0.4",
-    "typescript": "^4.3.5"
+    "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "cross-env BROWSER=none CHOKIDAR_USEPOLLING=true HOST=0.0.0.0 react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "build-dev": "cross-env REACT_APP_MODE=development react-scripts build",
     "lint": "eslint --ext .ts --ext .tsx src/**",
@@ -70,6 +71,7 @@
     "@types/react-responsive": "^8.0.3",
     "@types/react-router-dom": "^5.1.8",
     "@types/sockjs-client": "^1.5.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "react-app-rewired": "^2.2.1"
   }
 }

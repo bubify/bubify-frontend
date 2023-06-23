@@ -13,6 +13,7 @@ const SafeIconButton = React.forwardRef((props: Props, ref) => {
 
   const handler = () => {
     const handler = callFnOnce.current.call();
+    // @ts-ignore
     if (handler && Promise.resolve(handler)) {
       setD(true);
       return handler

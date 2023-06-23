@@ -11,11 +11,12 @@ RUN apt upgrade -y
 # rm -rf /var/lib/apt/lists/* && \
 # apt clean
 
-RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven
+RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven git less
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get update
 RUN apt install -y nodejs
+RUN npm -g install yarn
 
 RUN useradd -ms /bin/bash bubify
 RUN usermod -aG sudo bubify
