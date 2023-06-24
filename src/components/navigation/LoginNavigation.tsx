@@ -128,17 +128,11 @@ function LoginNavigation(props: Props) {
           <p onClick={() => simulateCAS("axhu1234")}>
             Login as Axel Hultman (student)
           </p>
-          <p onClick={() => simulateCAS("mame0311")}>
-            Login as Magdalena Melin (student)
+          <p onClick={() => simulateCAS("some0311")}>
+            Login as Sofia Melin (junior TA)
           </p>
-          <p onClick={() => simulateCAS("jono4597")}>
-            Login as Jonas Student (junior TA)
-          </p>
-          <p onClick={() => simulateCAS("jonno220")}>
-            Login as Jonas Norlinder (senior TA)
-          </p>
-          <p onClick={() => simulateCAS("writo649")}>
-            Login as Tobias Wrigstad (Teacher)
+          <p onClick={() => simulateCAS("adalo9999")}>
+            Login as Ada Lovelace (teacher)
           </p>
         </div>
         <hr />
