@@ -179,7 +179,6 @@ class CourseSettings extends React.Component<
               style={{ margin: "10px" }}
               margin="normal"
               id="course-date"
-              disabled
               label="Course start date"
               format="YYYY-MM-DD"
               required
