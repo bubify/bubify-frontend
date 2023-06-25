@@ -1,4 +1,4 @@
-import { Button, CircularProgress, createStyles, Theme, Typography } from "@material-ui/core";
+import { Button, CircularProgress, createStyles, TextField, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { AxiosResponse } from "axios";
 import crypto from "crypto";
@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function LoginNavigation(props: Props) {
   const [casLoading, setCasLoading] = React.useState(false);
+  const [customSu, setCustomSu] = React.useState("");
   const { t } = useTranslation();
   let simulateCAS: (id: string) => Promise<void> | undefined;
   simulateCAS = async function simulateCAS(username: string) {
@@ -121,7 +122,7 @@ function LoginNavigation(props: Props) {
 
   const developerLogin: JSX.Element | null =
     process.env.REACT_APP_MODE === "development" ? (
-      <div style={{ position: "absolute" as "absolute", top: "0px" }}>
+      <div style={{ position: "absolute" as "absolute", top: "0px", background: "#def5ff" }}>
         <hr />
         <div>
           <h1>Dev Mode: Simulate CAS</h1>
@@ -133,6 +134,9 @@ function LoginNavigation(props: Props) {
           </p>
           <p onClick={() => simulateCAS("adalo9999")}>
             Login as Ada Lovelace (teacher)
+          </p>
+          <p>
+            <TextField id="su" name="su" helperText="Username" onChange={(event) => setCustomSu(event.target.value)}/><Button onClick={() => {if (customSu.length > 0) simulateCAS(customSu)} }>Login</Button>
           </p>
         </div>
         <hr />
