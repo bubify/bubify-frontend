@@ -36,7 +36,7 @@ RUN openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 \
     -subj "/C=/ST=/L=/O=/CN=locahost" \
     -keyout ssl.key -out ssl.crt
 
-COPY --chown=bubify:bubify ./ /home/bubify/frontend
+COPY ./ /home/bubify/frontend
 
 WORKDIR /home/bubify/frontend
 USER root
