@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-LABEL maintainer="jonas@norlinder.nu"
+LABEL maintainer="jonas.norlinder@it.uu.se"
 
 RUN apt update
 RUN apt upgrade -y
