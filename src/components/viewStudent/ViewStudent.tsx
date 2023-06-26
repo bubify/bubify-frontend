@@ -78,6 +78,7 @@ class ViewStudent extends React.Component<
                 id="tags-standard"
                 onChange={this.handleChange}
                 options={this.state.users as User[]}
+                autoHighlight
                 getOptionSelected={(option, value) => {
                   return option.id.toString() === value.id.toString();
                 }}
