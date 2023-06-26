@@ -40,6 +40,7 @@ function AchievementsList(props: Props & EContextValue) {
       value={props.selectedAchievements}
       style={FormStyle}
       multiple
+      autoHighlight
       id="tags-standard"
       onChange={props.handleChange}
       options={props.achievementsRemaining ? props.achievementsRemaining : []}

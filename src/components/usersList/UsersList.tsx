@@ -30,6 +30,7 @@ function UsersList(props: Props) {
             value={props.selectedUsers}
             style={FormStyle}
             multiple
+            autoHighlight
             disableClearable={props.clearable ? !props.clearable :true}
             id="tags-standard"
             onChange={props.handleChange}
