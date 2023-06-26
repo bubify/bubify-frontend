@@ -21,6 +21,7 @@ import { SafeButton } from "../safeButton/SafeButton";
 import { withUser } from "../userContext";
 import { EContextValue } from "../userContext/UserContext";
 import UsersList from "../usersList";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props {
   handleDialog: () => void;
@@ -129,15 +130,13 @@ class SelectGoalsToDemonstrate extends React.Component<
       if (user) {
         selectedUserIds?.push(user);
       }
-      const users: AxiosResponse<User[]> = await axios.get(
-        "/allStudentNamesAndIds"
-      );
+      const users: User[] = await getSortedUserList("student")
       const achievements: AxiosResponse<
         AchievementsResponse[]
       > = await axios.get("/remaining/demonstrable");
       this.setState({
         selectedUserIds,
-        users: users.data,
+        users: users,
         achievementsRemaining: achievements.data.filter(a => !a.currentlyPushedBack),
       });
     } catch (e) { }

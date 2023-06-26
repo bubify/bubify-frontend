@@ -1,7 +1,6 @@
 import { Checkbox, Chip, FormControlLabel, FormGroup, Theme, Typography, withStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import RoomIcon from '@material-ui/icons/Room';
-import { AxiosResponse } from "axios";
 import dayjs from "dayjs";
 import React from "react";
 import { withTranslation, WithTranslation } from "react-i18next";
@@ -12,6 +11,7 @@ import { SafeButton } from "../safeButton/SafeButton";
 import { withUser } from "../userContext";
 import { EContextValue } from "../userContext/UserContext";
 import UsersList from "../usersList/UsersList";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props {
   handleDialog: () => void;
@@ -112,19 +112,15 @@ class SelectUsersHelpList extends React.Component<
 
   async componentDidMount() {
     try {
-      const users: User[] = [];
+      const selectedUsers: User[] = [];
       const user = this.props?.user;
       if (user) {
-        users?.push(user);
+        selectedUsers?.push(user);
       }
-      this.setState({ selectedUserIds: users });
+      this.setState({ selectedUserIds: selectedUsers });
 
-      const response: Promise<AxiosResponse<User[]>> = axios.get(
-        "/allStudentNamesAndIds"
-      );
-      response.then((response) => {
-        this.setState({ users: response.data });
-      });
+      const users: User[] = await getSortedUserList("student")
+      this.setState({ users: users });
     } catch (e) { }
   }
 
