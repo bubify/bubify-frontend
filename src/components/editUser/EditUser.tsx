@@ -9,6 +9,7 @@ import axios from "../../utils/axios";
 import { Loader } from "../loader/Loader";
 import ProfilePicture from "../profilePicture";
 import { SafeButton } from "../safeButton/SafeButton";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props { }
 
@@ -30,10 +31,8 @@ class EditUser extends React.Component<
 
   async getUsers() {
     try {
-      const response: AxiosResponse<User[]> = await axios.get(
-        "/allNamesAndIds"
-      );
-      this.setState({ users: response.data });
+      const users: User[] = await getSortedUserList()
+      this.setState({ users: users });
     } catch (e) { }
   }
 

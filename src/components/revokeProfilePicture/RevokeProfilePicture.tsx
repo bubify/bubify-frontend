@@ -1,5 +1,4 @@
 import { FormGroup } from "@material-ui/core";
-import { AxiosResponse } from "axios";
 import React from "react";
 import { WithTranslation, withTranslation } from "react-i18next";
 import { toast } from "react-toastify";
@@ -8,6 +7,7 @@ import axios from "../../utils/axios";
 import { fullName } from "../../utils/fullName";
 import { SafeButton } from "../safeButton/SafeButton";
 import UsersList from "../usersList";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props { }
 
@@ -27,10 +27,8 @@ class RevokeProfilePicture extends React.Component<
 
   async componentDidMount() {
     try {
-      const response: AxiosResponse<User[]> = await axios.get(
-        "/allNamesAndIds"
-      );
-      this.setState({ users: response.data });
+      const users: User[] = await getSortedUserList()
+      this.setState({ users: users });
     } catch (e) { }
   }
 
