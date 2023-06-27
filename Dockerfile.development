@@ -11,7 +11,11 @@ RUN apt upgrade -y
 # rm -rf /var/lib/apt/lists/* && \
 # apt clean
 
-RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven git less
+RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven git less tzdata
+
+RUN ln -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime && \
+    dpkg-reconfigure -f noninteractive tzdata
+
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get update
