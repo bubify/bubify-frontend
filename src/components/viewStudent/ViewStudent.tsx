@@ -7,6 +7,7 @@ import { User } from "../../models/User";
 import axios from "../../utils/axios";
 import DashboardStudent from "../dashboard/DashboardStudent";
 import { Loader } from "../loader/Loader";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props { }
 
@@ -30,10 +31,8 @@ class ViewStudent extends React.Component<
 
   async getUsers() {
     try {
-      const response: AxiosResponse<User[]> = await axios.get(
-        "/allStudentNamesAndIds"
-      );
-      this.setState({ users: response.data });
+      const users: User[] = await getSortedUserList("student")
+      this.setState({ users: users });
     } catch (e) { }
   }
 
@@ -78,6 +77,7 @@ class ViewStudent extends React.Component<
                 id="tags-standard"
                 onChange={this.handleChange}
                 options={this.state.users as User[]}
+                autoHighlight
                 getOptionSelected={(option, value) => {
                   return option.id.toString() === value.id.toString();
                 }}

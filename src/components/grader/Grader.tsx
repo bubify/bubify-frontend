@@ -17,6 +17,7 @@ import { SafeButton } from "../safeButton/SafeButton";
 import { withUser } from "../userContext";
 import { EContextValue } from "../userContext/UserContext";
 import UsersList from "../usersList";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props {
 
@@ -77,15 +78,14 @@ class Grader extends React.Component<
 
   async componentDidMount() {
     try {
-      const users: AxiosResponse<User[]> = await axios.get(
-        "/allStudentNamesAndIds"
-      );
+      const users: User[] = await getSortedUserList("student")
+
       const achievements: AxiosResponse<
         AchievementsResponse[]
       > = await axios.get("/achievements");
 
       this.setState({
-        users: users.data,
+        users: users,
         achievements: achievements.data,
       });
     } catch (e) { }
