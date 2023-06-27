@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-LABEL maintainer="jonas@norlinder.nu"
+LABEL maintainer="jonas.norlinder@it.uu.se"
 
 RUN apt update
 RUN apt upgrade -y
@@ -11,7 +11,7 @@ RUN apt upgrade -y
 # rm -rf /var/lib/apt/lists/* && \
 # apt clean
 
-RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven git less
+RUN apt install -y wget apt-transport-https gnupg curl sudo tmux emacs nano htop maven git less nginx
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get update
@@ -31,14 +31,18 @@ RUN mkdir -p frontend
 RUN mkdir -p frontend/build
 RUN mkdir -p frontend/node_modules
 
-ENV AU_BACKEND_HOST=
-ENV AU_FRONTEND_HOST=
-ENV AU_APP_API=
-ENV AU_APP_WEBSOCKET=
-
 WORKDIR /home/bubify
-COPY --chown=bubify:bubify start.sh /home/bubify
-RUN chmod +x start.sh
+RUN openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 \
+    -subj "/C=/ST=/L=/O=/CN=locahost" \
+    -keyout ssl.key -out ssl.crt
 
-EXPOSE 3000
-CMD ["./start.sh"]
+COPY ./ /home/bubify/frontend
+
+WORKDIR /home/bubify/frontend
+USER root
+RUN rm -rf build
+
+ENV PRODUCTION=true
+
+USER bubify
+CMD ["bash", "start_production.sh"]
