@@ -31,6 +31,7 @@ function UsersList(props: Props) {
             style={FormStyle}
             multiple
             autoHighlight
+            filterSelectedOptions
             disableClearable={props.clearable ? !props.clearable :true}
             id="tags-standard"
             onChange={props.handleChange}
