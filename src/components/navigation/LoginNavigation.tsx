@@ -84,7 +84,7 @@ function LoginNavigation(props: Props) {
     const id = crypto.randomBytes(64).toString("base64");
     openExternalUrl(process.env.REACT_APP_API + "/auth?id=" + id);
     await sleep(2000);
-    let token: string | undefined;
+    let token: string = "";
     let i = 0;
     while (!token) {
       if (i > MAX_RETIRES) break;
