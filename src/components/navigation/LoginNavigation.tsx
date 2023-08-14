@@ -166,7 +166,7 @@ function LoginNavigation(props: Props) {
             <div style={{maxWidth: "400px"}}>
             <i>GDPR Note:
 
-We keep information about your progress and request for a time slot for up to 2 years. This expiry clock is reset if you do any kind of interaction, e.g., login, demonstrate, etc. We use the data to track your progress on the course, and as grounds for entering grades into LADOK.
+Your login information has been imported from Studium if you are registred on the course. We use the data to track your progress on the course, and as grounds for entering grades into LADOK.
 
 Your email may be used to send you information about code exams, or follow-up on your progress. When you use this system we use cookies to keep track of your authentication.</i>
             </div>
