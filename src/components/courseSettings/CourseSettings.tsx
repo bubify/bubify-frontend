@@ -193,14 +193,12 @@ class CourseSettings extends React.Component<
           <TextField label="GitHub base URL" fullWidth
             value={this.state.course.gitHubOrgURL}
             onChange={this.handleCourseChange}
-            disabled
             id="course-github" style={{ margin: "10px" }}
             placeholder="E.g. https://github.com/IOOPM-UU"
           />
           <TextField label="Course web URL" fullWidth
             value={this.state.course.courseWebURL}
             onChange={this.handleCourseChange}
-            disabled
             id="course-webUrl" style={{ margin: "10px" }}
             placeholder="E.g. https://wrigstad.com/ioopm/"
           />

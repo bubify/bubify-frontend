@@ -11,17 +11,17 @@ import RoomIcon from '@material-ui/icons/Room';
 import { AxiosResponse } from "axios";
 import dayjs from "dayjs";
 import React from "react";
-import { withTranslation, WithTranslation } from "react-i18next";
+import { WithTranslation, withTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { AchievementsResponse } from "../../models/AchievementsResponse";
 import { User } from "../../models/User";
 import axios from "../../utils/axios";
+import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 import AchievementsList from "../achievementsList";
 import { SafeButton } from "../safeButton/SafeButton";
 import { withUser } from "../userContext";
 import { EContextValue } from "../userContext/UserContext";
 import UsersList from "../usersList";
-import { getSortedUserList } from "../../utils/functions/getSortedUserList";
 
 interface Props {
   handleDialog: () => void;
@@ -208,7 +208,8 @@ class SelectGoalsToDemonstrate extends React.Component<
                 label="Zoom"/>
               </Typography> : <></>}
               {this.state.physicalRoom || this.props.course?.roomSetting?.localeCompare("PHYSICAL") === 0 ?
-              <div><Chip color="secondary" label="1515" onClick={() => {this.setState({room: "1515"})}} style={{marginLeft: "10px", marginTop: "10px", marginBottom: "10px"}} /><Chip color="secondary" label="1549" onClick={() => {this.setState({room: "1549"})}} style={{marginLeft: "10px", marginTop: "10px", marginBottom: "10px"}} /><Chip color="secondary" label="1245" onClick={() => {this.setState({room: "1245"})}} style={{marginLeft: "10px", marginTop: "10px", marginBottom: "10px"}} />
+              <div>
+                {["10K1121", "10K1125", "10K1201", "10K1203", "10K1205", "10K1206", "10K1210"].map(e => <><Chip color="secondary" label={e} onClick={() => {this.setState({room: e})}} style={{marginLeft: "10px", marginTop: "10px", marginBottom: "10px"}} /></>)}
               <TextField
                 style={{ marginLeft: "10px", marginBottom: "10px" }}
                 id="SelectUsersHelpList-room"

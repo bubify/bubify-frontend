@@ -1,6 +1,5 @@
 import { createStyles, Grid, List, ListItem, makeStyles, Theme, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import React from "react";
 import bubobubo from "../../images/bubobubo/eurasian-eagle-owl-bubo-bubo.jpg";
 
 interface Props {
@@ -87,7 +86,7 @@ function AboutBubifyModal(props: Props) {
           </List>
         </Grid>
       </Grid>
-      <div style={{marginTop: "10px"}}>Do you have ideas or opinions on how to do things better, share them with <a href="mailto:jonas.norlinder@it.uu.se?subject=Bubify suggestions">us</a>! We welcome junior and senior experienced developers to join in on the fun at Github. If you feel that your course uses inferior tools and should use Bubify instead, mail the course director and we could maybe make it happen!</div>
+      <div style={{marginTop: "10px"}}>Do you have ideas or opinions on how to do things better, share them with <a href="mailto:jonas.norlinder@it.uu.se?subject=Bubify suggestions">us</a>! We welcome junior and senior experienced developers to <a href="https://bubify.github.io/">join</a> in on the fun. If you feel that your course uses inferior tools and should use Bubify instead, mail the course director and we could maybe make it happen!</div>
     </div >
   );
 }

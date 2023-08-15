@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
 function StudentNavigation(props: StudentNavigationProps) {
   const { t } = useTranslation();
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(props.course?.statisticsModule ? 0 : 1);
 
   const logout = () => {
     props.clearStorage();
@@ -47,6 +47,7 @@ function StudentNavigation(props: StudentNavigationProps) {
   const menuItems = (
     <>
       <List>
+      {props.course?.statisticsModule ?
         <Tooltip title={t("Menu.dashboard") as string}>
           <ListItem
             button
@@ -59,7 +60,7 @@ function StudentNavigation(props: StudentNavigationProps) {
             </ListItemIcon>
             <ListItemText primary={t("Menu.dashboard") as string} />
           </ListItem>
-        </Tooltip>
+        </Tooltip> : null }
         <>{props.course?.helpModule && !props.course.examMode ?
         <>
           <Tooltip title={t("Menu.requestHelp") as string}>
@@ -107,8 +108,9 @@ function StudentNavigation(props: StudentNavigationProps) {
             </ListItem>
           </Tooltip> : <></>}
       </List>
-      <Divider />
+      {(props?.course?.gitHubOrgURL !== null || props?.course?.courseWebURL!== null) ? <Divider /> : null}
       <List>
+        {props?.course?.gitHubOrgURL !== null ?
         <Tooltip title={(props?.user?.gitHubHandle === null ? "Link with GitHub" : props?.user?.gitHubRepoURL) as string}>
           <ListItem
             button
@@ -120,8 +122,8 @@ function StudentNavigation(props: StudentNavigationProps) {
             </ListItemIcon>
             <ListItemText primary={t("Menu.myGithub") as string} />
           </ListItem>
-        </Tooltip>
-        <Tooltip title={t("Menu.coursePage") as string}>
+        </Tooltip> : null}
+        {props?.course?.courseWebURL !== null ? <Tooltip title={t("Menu.coursePage") as string}>
           <ListItem
             button
             key={t("Menu.coursePage") as string}
@@ -132,7 +134,8 @@ function StudentNavigation(props: StudentNavigationProps) {
             </ListItemIcon>
             <ListItemText primary={t("Menu.coursePage") as string} />
           </ListItem>
-        </Tooltip>
+        </Tooltip> : null}
+
         <Divider />
         <Tooltip title={t("Menu.logout") as string}>
           <ListItem button key={t("Menu.logout") as string} onClick={logout}>
