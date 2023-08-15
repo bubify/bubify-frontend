@@ -152,7 +152,7 @@ function LoginNavigation(props: Props) {
           <div style={{ textAlign: "center", maxWidth: "400px", overflow: "auto" }}>
             <Typography className={classes.title} style={{marginBottom: "20px", whiteSpace: "nowrap"}} variant="h1">Bubify<img className={classes.logo} src={LogoSmall} alt="logo"
                 style={{ verticalAlign: "middle", marginLeft: "5px" }} />
-                </Typography><Typography style={{marginBottom: "60px"}}  variant="subtitle1">Greetings dear IOOPM participant</Typography>
+                </Typography>
                 <br/>
 
             <Button style={{ marginBottom: "30px" }} variant="contained" color="primary" onClick={() => CAS()}>
